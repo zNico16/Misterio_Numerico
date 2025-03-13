@@ -1,0 +1,248 @@
+:root{
+    --color-white: #fff;
+    --color-blue: rgb(116, 182, 248);
+    --color-blue2: rgb(54, 143, 233);
+    --color-gray: rgb(238, 238, 238);
+}
+
+body {
+    all: unset;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, rgb(101, 178, 255), rgb(58, 8, 116));
+}
+
+.lobby-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    background-color: rgba(0,0,0,0.6);
+    color: var(--color-white);
+    padding: 3rem 4rem;
+    border-radius: 1rem;
+}
+
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.lobby-content h1 {
+    color: var(--color-white);
+}
+
+.lobby-content p {
+    color: var(--color-white);
+    margin-bottom: 20px;
+}
+
+.lobby-content button {
+    padding: 8px;
+    width: 80%;
+    font-size: 1rem;
+    background-color: var(--color-blue2);
+    border: none;
+    border-radius: 1rem;
+    color: var(--color-white);
+    margin-top: 2rem;
+    cursor: pointer;
+    transition: .4s;
+}
+
+.lobby-content button:hover {
+    background-color: var(--color-blue);
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    background-color: rgba(0,0,0,0.6);
+    color: var(--color-white);
+    padding: 3rem 4rem;
+    border-radius: 1rem;
+}
+
+.content input{
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid var(--color-gray);
+    color: var(--color-white);
+    outline: none;
+    padding: .2rem;
+    width: 90%;
+    font-size: 1rem;
+}
+
+.content input::placeholder{
+    color: var(--color-white);
+}
+
+.content input:focus{
+    border-bottom: 1px solid var(--color-blue);
+}
+
+.content button{
+    padding: .8rem;
+    width: 100%;
+    font-size: 1rem;
+    background-color: var(--color-blue2);
+    border: none;
+    border-radius: 1rem;
+    color: var(--color-white);
+    margin-top: 2rem;
+    cursor: pointer;
+    transition: .4s;
+}
+
+.content button:hover{
+    background-color: var(--color-blue);
+}
+
+#historicoNumeros {
+    flex-direction: column;
+    list-style: none;
+    position: fixed;
+    top: 1px; /* Ajuste conforme necessário */
+    right: 5px; /* Ajuste conforme necessário */
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 1rem;
+    padding: 10px;
+    max-height: 600px;
+    overflow-y: auto;
+    background-color: rgba(0,0,0,0.6);
+    color: var(--color-white);
+}
+
+#historicoNumeros li {
+    margin-bottom: 5px;
+  }
+
+.maior::before {
+    content: '⇧'; /* Símbolo de seta para cima ou escolha outro símbolo */
+    margin-right: 10px;
+    color: rgb(8, 199, 8);
+    font-size: 24px; /* Ajuste o tamanho da seta */
+}
+
+.menor::before {
+    content: ' ⇩'; /* Símbolo de seta para baixo ou escolha outro símbolo */
+    margin-right: 10px;
+    color: rgb(241, 59, 59);
+    font-size: 24px; /* Ajuste o tamanho da seta */
+}
+
+.acertou {
+    color: rgb(45, 45, 243);
+  }
+
+
+#reiniciarBtn {
+    display: none;
+  }
+
+#enviarBtn {
+    padding: .8rem;
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+  }
+
+.voltar-lobby-btn {
+    position: fixed;
+    top: -5px; /* Ajuste conforme necessário */
+    left: 1px; /* Ajuste conforme necessário */
+    padding: 10x;
+    background-color: transparent;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 2rem;
+    cursor: pointer;
+    display: none;
+  }
+
+#parabensTexto {
+    display: none;
+    color: green;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+
+#texto {
+    cursor: pointer;
+}
+
+#mensagemPerda {
+    display: none;
+    color: red;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+@media only screen and (max-width: 600px) {
+    #historicoNumeros {
+        top: -15px; /* Ajuste conforme necessário */
+        right: 1px; /* Ajuste conforme necessário */
+        max-height: 32px;
+    }
+    .voltar-lobby-btn {
+        top: -15px; /* Ajuste conforme necessário */
+        left: 1px; /* Ajuste conforme necessário */
+      }
+}
+
+.modo-jogo {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.modo-jogo button {
+    padding: 8px 15px;
+    font-size: 1rem;
+    background-color: var(--color-blue2);
+    border: none;
+    border-radius: 1rem;
+    color: var(--color-white);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.modo-jogo button:hover {
+    background-color: var(--color-blue);
+}
+
+#parabensTexto h1, #mensagemPerda h1 {
+    font-size: 1.5rem; /* Tamanho menor para os textos de vitória e derrota */
+    text-align: center;
+}
+
+#parabensTexto, #mensagemPerda {
+    text-align: center;
+}
+
+#imagemVitoria, #imagemDerrota {
+    display: block;
+    margin: 10px auto;
+    width: 200px; /* Tamanho ajustável */
+    top: -197px;  /* Ajuste este valor conforme necessário */
+}
+
+.imagem-resultado {
+    position: absolute;
+    top: -120px; /* Ajuste para posicionar acima da área do texto */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px; /* Ajuste o tamanho conforme necessário */
+    display: none;
+}
+
